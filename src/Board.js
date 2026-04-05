@@ -92,3 +92,5 @@ class Board {
     return !this.isValid(piece.blocks);
   }
 }
+
+export default Board;
