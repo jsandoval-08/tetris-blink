@@ -1,7 +1,7 @@
 // main.js — Configuración de Phaser y arranque del juego
-import MenuScene from './src/MenuScene.js';
-import GameScene from './src/GameScene.js';
-import GameOverScene from './src/GameOverScene.js';
+import MenuScene from './MenuScene.js';
+import GameScene from './GameScene.js';
+import GameOverScene from './GameOverScene.js';
 
 const GAME_W = 480;
 const GAME_H = 720;
