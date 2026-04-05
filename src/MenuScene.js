@@ -7,7 +7,7 @@ class MenuScene extends Phaser.Scene {
 
   preload() {
     // Audio
-    this.load.audio('bgm', ['assets/music/lofi.ogg','assets/music/lofi.mp3']);
+    this.load.audio('bgm', ['assets/music/tetris.ogg','assets/music/tetris.mp3']);
     this.load.audio('sfx_move', 'assets/sounds/move.wav');
     this.load.audio('sfx_rotate', 'assets/sounds/rotate.wav');
     this.load.audio('sfx_place', 'assets/sounds/place.wav');
