@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#000000" />
   <title>BlinkBlocks</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
@@ -17,16 +18,22 @@
     }
     canvas { display: block; }
   </style>
+
   <!-- Google Fonts: Orbitron -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
+  <!-- Favicon opcional -->
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-  <!-- Phaser 3 via CDN -->
+
+  <!-- Phaser 3 -->
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
 
-  <!-- Solo se carga main.js como módulo; este importa tus escenas -->
+  <!-- Tu main.js como módulo -->
   <script type="module" src="src/main.js"></script>
+
 </body>
 </html>
