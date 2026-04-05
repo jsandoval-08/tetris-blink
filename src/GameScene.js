@@ -241,11 +241,11 @@ class GameScene extends Phaser.Scene {
     const btnSize = 52;
 
     const buttons = [
-      { label:'◀', x:W*0.12, action:()=>this._moveH(-1) },
-      { label:'▶', x:W*0.28, action:()=>this._moveH(1) },
-      { label:'▼', x:W*0.44, action:()=>{ this.board.move(this.current,0,1); } },
+      { label:'◁', x:W*0.12, action:()=>this._moveH(-1) },
+      { label:'▷', x:W*0.28, action:()=>this._moveH(1) },
+      { label:'▽', x:W*0.44, action:()=>{ this.board.move(this.current,0,1); } },
       { label:'↻', x:W*0.60, action:()=>this._rotate() },
-      { label:'⬇', x:W*0.76, action:()=>this._hardDrop() },
+      { label:'▽', x:W*0.76, action:()=>this._hardDrop() },
     ];
 
     for(const btn of buttons){
