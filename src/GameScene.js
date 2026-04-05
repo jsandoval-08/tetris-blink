@@ -1,4 +1,4 @@
-// src/GameScene.js — Escena principal del juego
+// GameScene.js — Escena principal del juego
 
 const CELL       = 28;
 const BOARD_X    = 20;
@@ -49,7 +49,7 @@ class GameScene extends Phaser.Scene {
     this.gUI       = this.add.graphics();
     this.gOverlay  = this.add.graphics();
 
-    // Espera a que cargue Orbitron antes de crear textos
+    // Espera a que cargue Orbitron antes de crear textos y controles
     document.fonts.ready.then(() => {
       this._buildHUD();
       this._buildKeyboard();
@@ -217,7 +217,14 @@ class GameScene extends Phaser.Scene {
   }
 
   // ── Render ────────────────────────────────────────────────────────────────
-  _redraw(){ this._updateTexts(); this._drawBoard(); this._drawGhost(); this._drawCurrent(); this._drawNext(); this._drawCombo(); }
+  _redraw(){
+    this._updateTexts();
+    this._drawBoard();
+    this._drawGhost();
+    this._drawCurrent();
+    this._drawNext();
+    this._drawCombo();
+  }
 
   _updateTexts(){
     this._txtScore.setText(this.score.toString());
