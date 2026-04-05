@@ -120,3 +120,5 @@ class Piece {
 function randomPiece() {
   return new Piece(PIECE_TYPES[Math.floor(Math.random() * PIECE_TYPES.length)]);
 }
+
+export { Piece, randomPiece };
