@@ -1,14 +1,20 @@
 // GameScene.js — Escena principal del juego
+import Board from './Board.js';
+import { randomPiece } from './Piece.js'; // asegúrate de exportar randomPiece desde Piece.js
 
-const COLS       = 10;   // número de columnas del tablero
-const ROWS       = 20;   // número de filas del tablero
-const CELL       = 28;   // tamaño de cada celda en píxeles
-const BOARD_X    = 20;
-const BOARD_Y    = 20;
-const BOARD_W    = COLS * CELL;
-const BOARD_H    = ROWS * CELL;
-const PANEL_X    = BOARD_X + BOARD_W + 16;
-const PANEL_W    = 120;
+const CELL    = 28;
+const BOARD_X = 20;
+const BOARD_Y = 20;
+
+// Creamos un tablero temporal para calcular dimensiones
+const tempBoard = new Board();
+const COLS = tempBoard.grid[0].length;
+const ROWS = tempBoard.grid.length;
+
+const BOARD_W = COLS * CELL;
+const BOARD_H = ROWS * CELL;
+const PANEL_X = BOARD_X + BOARD_W + 16;
+const PANEL_W = 120;
 
 const LINE_POINTS  = { 1: 100, 2: 300, 3: 500, 4: 1000 };
 const DAS_DELAY    = 170;
@@ -60,7 +66,6 @@ class GameScene extends Phaser.Scene {
     });
   }
 
-  // ── Update ────────────────────────────────────────────────────────────────
   update(time, delta) {
     if (this._clearRows.length > 0) {
       this._clearTimer -= delta;
@@ -137,7 +142,7 @@ class GameScene extends Phaser.Scene {
     this._glowTimer = 150;
     this._playSfx('sfx_place');
 
-    if(fullRows.length>0){
+    if(fullRows.length>0) {
       const n = fullRows.length;
       this.score += (LINE_POINTS[n]||0)*this.level;
       this.lines += n;
@@ -153,7 +158,7 @@ class GameScene extends Phaser.Scene {
       this._clearTimer = CLEAR_ANIM;
       this._playSfx('sfx_clear');
       this._saveBest();
-    }else this._spawnNext();
+    } else this._spawnNext();
   }
 
   _spawnNext(){
@@ -218,7 +223,6 @@ class GameScene extends Phaser.Scene {
     ).setOrigin(0.5).setAlpha(0);
   }
 
-  // ── Render ────────────────────────────────────────────────────────────────
   _redraw(){
     this._updateTexts();
     this._drawBoard();
@@ -235,7 +239,6 @@ class GameScene extends Phaser.Scene {
     this._txtLines.setText(this.lines.toString());
   }
 
-  // ── Controles táctiles ─────────────────────────────────────────────────────
   _buildTouchControls(){
     const W = this.scale.width;
     const H = this.scale.height;
@@ -267,6 +270,9 @@ class GameScene extends Phaser.Scene {
       zone.on('pointerdown', btn.action);
     }
   }
+
+  // ── Métodos de dibujo (_drawBoard, _drawCurrent, etc.) ──
+  // Debes tenerlos aquí igual que antes
 }
 
 export default GameScene;
