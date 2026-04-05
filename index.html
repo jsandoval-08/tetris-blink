@@ -17,21 +17,17 @@
     }
     canvas { display: block; }
   </style>
+
   <!-- Google Fonts: Orbitron -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-  
 </head>
 <body>
   <!-- Phaser 3 via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
 
-  <script src="src/Piece.js"></script>
-  <script src="src/Board.js"></script>
-  <script src="src/MenuScene.js"></script>
-  <script src="src/GameScene.js"></script>
-  <script src="src/GameOverScene.js"></script>
-  <script src="src/main.js"></script>
+  <!-- Main script como módulo -->
+  <script type="module" src="src/main.js"></script>
 </body>
 </html>
