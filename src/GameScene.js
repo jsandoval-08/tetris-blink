@@ -1,6 +1,8 @@
 // GameScene.js — Escena principal del juego
 
-const CELL       = 28;
+const COLS       = 10;   // número de columnas del tablero
+const ROWS       = 20;   // número de filas del tablero
+const CELL       = 28;   // tamaño de cada celda en píxeles
 const BOARD_X    = 20;
 const BOARD_Y    = 20;
 const BOARD_W    = COLS * CELL;
